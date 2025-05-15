@@ -7,10 +7,10 @@ const Landing = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigate('/home'); // redirige al home después de 3 segundos
+      navigate('/home');
     }, 5000);
 
-    return () => clearTimeout(timer); // limpieza
+    return () => clearTimeout(timer);
   }, [navigate]);
 
   return (

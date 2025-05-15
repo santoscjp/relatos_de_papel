@@ -6,6 +6,7 @@ import NavBarApp from './components/Navbar/Navbar';
 import { ContextoBusquedaProvider } from './context/ContextoBusqueda';
 import { Route, Routes } from 'react-router-dom';
 import Landing from './components/Landing';
+import Libro from './components/Producto/Libro';
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
             <ProductSlider />
           </ContextoBusquedaProvider>
         } />
-        {/* <Route path="/producto/:id" element={Producto} /> */}
+        <Route path="/producto/:id" element={<Libro/>} />
       </Routes>
   );
 }
