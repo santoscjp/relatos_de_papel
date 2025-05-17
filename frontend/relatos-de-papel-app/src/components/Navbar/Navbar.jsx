@@ -13,7 +13,7 @@ const NavBarApp = () => {
           <Busqueda />
           <Nav >
             <Nav.Link href="#"><BsPerson /> Iniciar sesión</Nav.Link>
-            <Nav.Link href="#"><BsCart3 /> Carrito</Nav.Link>
+            <Nav.Link href="/carrito"><BsCart3 /> Carrito</Nav.Link>
             <DarkModeToggle />
           </Nav>
         </Navbar.Collapse>
