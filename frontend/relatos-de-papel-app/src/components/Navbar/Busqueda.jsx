@@ -9,7 +9,6 @@ const Busqueda = () => {
     };
 
     return (
-        <div>
         <Form className="d-flex mx-auto" style={{ maxWidth: 400, flex: 1 }}>
             <FormControl
               type="search"
@@ -19,7 +18,6 @@ const Busqueda = () => {
               onChange={handleChange}
             />
           </Form>
-        </div>
     );
 };
 
