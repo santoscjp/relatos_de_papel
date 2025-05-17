@@ -22,7 +22,9 @@ const Libro = () => {
     <Container className="book-detail my-5">
       <Row>
         <Col md={4}>
-          <Card.Img variant="top" src={`assets/${libro.portada}`}alt={libro.titulo} />
+          <Card.Img variant="top"   
+            src={`${process.env.PUBLIC_URL}/assets/${libro.portada}`}  
+            alt={libro.titulo} />
         </Col>
         <Col md={8}>
           <h2>{libro.titulo}</h2>

@@ -14,7 +14,7 @@ const HeroCarousel = () => {
               <p>HASTA 10% OFF</p>
             </Col>
             <Col md={4}>
-              <img src="assets/book1.png" alt="Promo" className="img-fluid" />
+              <img src="assets/images/promo.jpg" alt="Promo" height={250} />
             </Col>
           </Row>
         </Container>

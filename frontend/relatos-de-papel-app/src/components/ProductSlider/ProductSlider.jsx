@@ -22,7 +22,12 @@ const ProductSlider = () => {
           <div className={styles.discount}>
             <Badge>{libro.descuento}% OFF</Badge>
           </div>
-          <Card.Img variant="top" src={`assets/${libro.portada}`} />
+          <Card.Img variant="top" 
+            src={`${process.env.PUBLIC_URL}/assets/${libro.portada}`} 
+            height={200}
+            className="object-fit-contain"
+            alt={libro.titulo} 
+            loading="lazy" />
           <Card.Body>
             <Card.Title className="small">{libro.titulo}</Card.Title>
             <Card.Text>

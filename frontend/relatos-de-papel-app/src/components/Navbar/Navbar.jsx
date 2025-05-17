@@ -7,7 +7,7 @@ const NavBarApp = () => {
   return (
     <Navbar expand="lg">
       <Container>
-        <Navbar.Brand href="#">📘 RELATOS DE PAPEL</Navbar.Brand>
+        <Navbar.Brand href="/home">📘 RELATOS DE PAPEL</Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-between">
           <Busqueda />
