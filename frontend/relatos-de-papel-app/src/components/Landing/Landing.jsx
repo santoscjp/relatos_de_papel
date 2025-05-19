@@ -14,9 +14,9 @@ const Landing = () => {
   }, [navigate]);
 
   return (
-    <div className="landing-container" onClick={() => navigate('/home')}>
-      <h1 className="landing-title">Relatos de Papel</h1>
-      <p className="landing-subtitle">Descubre historias que transforman.</p>
+    <div className="landing" onClick={() => navigate('/home')}>
+      <h1 className="landing__title">Relatos de Papel</h1>
+      <p className="landing__subtitle">Descubre historias que transforman.</p>
     </div>
   );
 };

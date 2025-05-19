@@ -1,0 +1,18 @@
+.carousel {
+  background-color: #1c2640;
+  color: white;
+
+  .banner {
+    padding: 2rem;
+    &__title {
+      font-size: 2.2rem;
+      font-weight: bold;
+    }
+    &__subtitle {
+      font-size: 2rem;
+      &--small {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}

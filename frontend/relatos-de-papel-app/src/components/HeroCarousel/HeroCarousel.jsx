@@ -1,17 +1,21 @@
 import React from 'react';
-import styles from './HeroCarousel.module.scss';
+import '../HeroCarousel/HeroCarousel.scss';
 import { Carousel, Container, Row, Col } from 'react-bootstrap';
 
 const HeroCarousel = () => {
   return (
-    <Carousel indicators={false} controls={true} className={styles.carousel}>
+    <Carousel className="carousel" indicators={false} controls={true}>
       <Carousel.Item>
-        <Container className={styles.banner}>
+        <Container className="banner">
           <Row className="align-items-center">
             <Col md={8}>
-              <h2>La mejor oferta online en libros</h2>
-              <h3><strong>De Mí Para Mí, La Tormenta Pasará</strong></h3>
-              <p>HASTA 10% OFF</p>
+              <div className="banner__subtitle">
+                La mejor oferta online en libros
+              </div>
+              <h3 className="banner__title">
+                De Mí Para Mí, La Tormenta Pasará
+              </h3>
+              <p className="banner__subtitle--small">HASTA 10% OFF</p>
             </Col>
             <Col md={4}>
               <img src="assets/images/promo.jpg" alt="Promo" height={250} />
