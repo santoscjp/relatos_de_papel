@@ -1,5 +1,5 @@
 import useCarrito from '../hooks/useCarrito';
-import { Container, Row, Col, Card, Button, ListGroup } from 'react-bootstrap';
+import { Container, Row, Col, Button, ListGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import NavBarApp from '../components/Navbar/Navbar';
 

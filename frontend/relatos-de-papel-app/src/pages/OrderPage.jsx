@@ -15,21 +15,17 @@ const CheckoutPage = () => {
     <>
     <NavBarApp />
     <Container className="mt-4">
-        <Row className="align-items-center mb-4 p-3" style={{ backgroundColor: '#d4edda', borderRadius: '5px' }}>
+        <Row className="align-items-center mb-4 p-3 bg-success bg-opacity-25 rounded">
             <Col xs={6}>
                 <Button as={Link} to="/home" variant="success" onClick={vaciarCarrito}>
                     Volver
                 </Button>
             </Col>
             <Col xs={6} className="text-end">
-                <strong  class="text-black">Compra realizada con éxito</strong>
+                <strong  class="text-gray">¡Compra realizada con éxito!</strong>
             </Col>
         </Row>
       <h3>Orden #AYS8472</h3>
-      {carrito.length === 0 ? (
-        <p>No hay productos en el carrito.</p>
-      ) : (
-        <>
           <Row>
             {carrito.map((item) => (
               <Col key={item.uuid} md={4} className="mb-3">
@@ -49,8 +45,6 @@ const CheckoutPage = () => {
           </Row>
           <hr />
           <h4>Total: ${total.toFixed(2)}</h4>
-        </>
-      )}
     </Container>
     </>
   );

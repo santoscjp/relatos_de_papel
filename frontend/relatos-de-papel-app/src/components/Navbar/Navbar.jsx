@@ -1,5 +1,5 @@
 import { Navbar, Container, Nav } from 'react-bootstrap';
-import { BsCart3, BsPerson } from 'react-icons/bs';
+import { BsCart3 } from 'react-icons/bs';
 import Busqueda from '../SearchBar/Busqueda';
 import DarkModeToggle from '../DarkModeToggle/DarkModeToggle';
 import { useLocation } from 'react-router-dom';

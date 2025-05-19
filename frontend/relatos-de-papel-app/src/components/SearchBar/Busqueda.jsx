@@ -8,7 +8,7 @@ const Busqueda = () => {
     };
 
     return (
-        <Form className="d-flex mx-auto" style={{ maxWidth: 400, flex: 1 }}>
+        <Form className="d-flex mx-auto w-50">
             <FormControl
               type="search"
               placeholder="Título, Autor, ISBN..."

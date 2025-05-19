@@ -4,6 +4,7 @@ import NavBarApp from '../components/Navbar/Navbar';
 import useCarrito from '../hooks/useCarrito';
 import libros from '../data/libros';
 import { Container, Row, Col, Card, Button, Toast } from 'react-bootstrap';
+import './BookDetailPage.scss';
 
 const BookDetailPage = () => {
   const { id } = useParams();
@@ -50,13 +51,7 @@ const BookDetailPage = () => {
           show={showToast}
           delay={2000}
           autohide
-          style={{
-            position: 'fixed',
-            bottom: 20,
-            right: 20,
-            minWidth: '220px',
-            zIndex: 9999,
-          }}
+          className='toast-top-center'
         >
           <Toast.Body>Producto agregado con éxito!</Toast.Body>
         </Toast>
