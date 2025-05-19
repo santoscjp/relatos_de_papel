@@ -1,11 +1,10 @@
-import React, {useContext} from 'react';
-import { ContextoBusqueda } from '../../context/ContextoBusqueda';
+import { useSearch } from '../../context/SearchContext';
 import { Form, FormControl } from 'react-bootstrap';
 
 const Busqueda = () => {
-    const {setCadenaFiltro} = useContext(ContextoBusqueda);
+    const { setSearchQuery } = useSearch();
     const handleChange = (e) => {
-        setCadenaFiltro(e.target.value.toLowerCase());
+        setSearchQuery(e.target.value.toLowerCase());
     };
 
     return (

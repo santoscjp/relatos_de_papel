@@ -1,6 +1,6 @@
 import { Navbar, Container, Nav} from 'react-bootstrap';
 import { BsCart3, BsPerson } from 'react-icons/bs';
-import Busqueda from './Busqueda';
+import Busqueda from '../SearchBar/Busqueda';
 import DarkModeToggle from './DarkModeToggle';
 
 const NavBarApp = () => {
@@ -13,7 +13,7 @@ const NavBarApp = () => {
           <Busqueda />
           <Nav >
             <Nav.Link href="#"><BsPerson /> Iniciar sesión</Nav.Link>
-            <Nav.Link href="/carrito"><BsCart3 /> Carrito</Nav.Link>
+            <Nav.Link href="/cart"><BsCart3 /> Carrito</Nav.Link>
             <DarkModeToggle />
           </Nav>
         </Navbar.Collapse>

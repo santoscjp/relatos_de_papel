@@ -1,6 +1,6 @@
-import useCarrito from '../../hooks/useCarrito';
+import useCarrito from '../hooks/useCarrito';
 
-const CarritoResumen = () => {
+const CartPage = () => {
   const { carrito, quitarDelCarrito, vaciarCarrito } = useCarrito();
 
   return (
@@ -18,4 +18,4 @@ const CarritoResumen = () => {
     </div>
   );
 };
-export default CarritoResumen;
+export default CartPage;

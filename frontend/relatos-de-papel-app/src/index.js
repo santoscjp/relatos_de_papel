@@ -3,19 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';import 'bootstrap/dist/css/bootstrap.min.css'; 
-import { BrowserRouter } from 'react-router-dom';
-import { CarritoProvider } from './context/CarritoContext';
+import { CarritoProvider } from './context/CartContext';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
   <CarritoProvider>
     <React.StrictMode>
       <App />
     </React.StrictMode>
-    </CarritoProvider>
-  </BrowserRouter>);
+  </CarritoProvider>
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
