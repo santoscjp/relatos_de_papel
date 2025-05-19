@@ -8,11 +8,11 @@ import { CarritoProvider } from './context/CartContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <CarritoProvider>
-    <React.StrictMode>
+
+
       <App />
-    </React.StrictMode>
-  </CarritoProvider>
+
+
 );
 
 // If you want to start measuring performance in your app, pass a function

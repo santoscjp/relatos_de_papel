@@ -13,50 +13,18 @@ import NotFoundPage    from '../pages/NotFoundPage';
 export default function AppRouter() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-
-        <Route
-          path="/home"
-          element={
-            <SearchProvider>
-              <HomePage />
-            </SearchProvider>
-          }
-        />
-
-        <Route
-          path="/book/:id"
-          element={
-            <SearchProvider>
-              <CarritoProvider>
-                <BookDetailPage />
-              </CarritoProvider>
-            </SearchProvider>
-          }
-        />
-
-        <Route
-          path="/cart"
-          element={
-            <CarritoProvider>
-              <CartPage />
-            </CarritoProvider>
-          }
-          
-        />
-
-        <Route
-          path="/checkout"
-          element={
-            <CarritoProvider>
-              <CheckoutPage />
-            </CarritoProvider>
-          }
-        />
-
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+      <CarritoProvider>
+        <SearchProvider>
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/home" element={<HomePage />} />
+            <Route path="/book/:id" element={<BookDetailPage />} />
+            <Route path="/cart" element={<CartPage />} />
+            <Route path="/checkout" element={<CheckoutPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </SearchProvider>
+      </CarritoProvider>
     </BrowserRouter>
   );
 }
