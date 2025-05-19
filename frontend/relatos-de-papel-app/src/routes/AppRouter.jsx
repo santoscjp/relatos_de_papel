@@ -9,6 +9,7 @@ import CartPage        from '../pages/CartPage';
 import BookDetailPage  from '../pages/BookDetailPage';
 import CheckoutPage    from '../pages/CheckoutPage';
 import NotFoundPage    from '../pages/NotFoundPage';
+import OrderPage       from '../pages/OrderPage';
 
 export default function AppRouter() {
   return (
@@ -21,6 +22,7 @@ export default function AppRouter() {
             <Route path="/book/:id" element={<BookDetailPage />} />
             <Route path="/cart" element={<CartPage />} />
             <Route path="/checkout" element={<CheckoutPage />} />
+            <Route path="/order" element={<OrderPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </SearchProvider>

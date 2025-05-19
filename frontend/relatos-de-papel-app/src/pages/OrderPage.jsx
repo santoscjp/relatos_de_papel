@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import NavBarApp from '../components/Navbar/Navbar';
 
 const CheckoutPage = () => {
-  const { carrito} = useCarrito();
+  const { carrito, vaciarCarrito } = useCarrito();
 
   const total = carrito.reduce(
     (acc, item) => acc + item.precioFinal * item.cantidad,
@@ -13,9 +13,19 @@ const CheckoutPage = () => {
 
   return (
     <>
-      <NavBarApp />
-      <Container className="mt-4">
-      <h3>Pasarela de Pago</h3>
+    <NavBarApp />
+    <Container className="mt-4">
+        <Row className="align-items-center mb-4 p-3" style={{ backgroundColor: '#d4edda', borderRadius: '5px' }}>
+            <Col xs={6}>
+                <Button as={Link} to="/home" variant="success" onClick={vaciarCarrito}>
+                    Volver
+                </Button>
+            </Col>
+            <Col xs={6} className="text-end">
+                <strong  class="text-black">Compra realizada con éxito</strong>
+            </Col>
+        </Row>
+      <h3>Orden #AYS8472</h3>
       {carrito.length === 0 ? (
         <p>No hay productos en el carrito.</p>
       ) : (
@@ -39,14 +49,9 @@ const CheckoutPage = () => {
           </Row>
           <hr />
           <h4>Total: ${total.toFixed(2)}</h4>
-          <Link to='/order'>
-            <Button variant="success">
-              Ir a pagar
-            </Button>
-          </Link>
         </>
       )}
-      </Container>
+    </Container>
     </>
   );
 };
