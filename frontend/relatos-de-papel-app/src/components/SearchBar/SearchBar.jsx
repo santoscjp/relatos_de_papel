@@ -1,7 +1,7 @@
-import { useSearch } from '../../context/SearchContext';
+ import { useSearch } from '../../hooks/useSearch';
 import { Form, FormControl } from 'react-bootstrap';
 
-const Busqueda = () => {
+const SearchBar = () => {
     const { setSearchQuery } = useSearch();
     const handleChange = (e) => {
         setSearchQuery(e.target.value.toLowerCase());
@@ -20,4 +20,4 @@ const Busqueda = () => {
     );
 };
 
-export default Busqueda;
+export default SearchBar;

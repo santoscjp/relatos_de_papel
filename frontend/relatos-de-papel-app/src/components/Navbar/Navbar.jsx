@@ -1,6 +1,6 @@
 import { Navbar, Container, Nav, Badge } from "react-bootstrap";
 import { BsCart3 } from "react-icons/bs";
-import Busqueda from "../SearchBar/Busqueda";
+import Busqueda from "../SearchBar/SearchBar";
 import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
 import { useLocation } from "react-router-dom";
 import useCarrito from "../../hooks/useCarrito";

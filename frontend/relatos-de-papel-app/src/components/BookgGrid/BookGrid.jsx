@@ -1,7 +1,7 @@
 import { Container, Row } from 'react-bootstrap';
 import libros from '../../data/libros';
 import BookItem from '../BookItem/BookItem';
-import { useSearch } from '../../context/SearchContext';
+ import { useSearch } from '../../hooks/useSearch';
 
 const BookGrid = () => {
   const { searchQuery } = useSearch();
