@@ -4,7 +4,7 @@ import { Carousel, Container, Row, Col } from 'react-bootstrap';
 
 const HeroCarousel = () => {
   return (
-    <Carousel className="carousel" indicators={false} controls={true}>
+    <Carousel className="carousel" indicators={false} controls={false}>
       <Carousel.Item>
         <Container className="banner">
           <Row className="align-items-center">

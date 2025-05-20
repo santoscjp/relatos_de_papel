@@ -4,18 +4,25 @@ import NavBarApp from '../components/Navbar/Navbar';
 import useCarrito from '../hooks/useCarrito';
 import libros from '../data/libros';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import ToastAlert from '../components/ToastAlert/ToastAlert';
 
 const BookDetailPage = () => {
   const { id } = useParams();
   const { agregarAlCarrito } = useCarrito();
   const [book, setBook] = useState(null);
+  const [showToast, setShowToast] = useState(false);
 
   useEffect(() => {
     const found = libros.find((l) => l.uuid === id);
     setBook(found);
   }, [id]);
 
-  if (!book) return <p>Loading book...</p>;
+  if (!book) return <p>Cargando libro...</p>;
+
+  const handleAgregar = () => {
+    agregarAlCarrito(book);
+    setShowToast(true);
+  };
 
   return (
     <>
@@ -34,11 +41,16 @@ const BookDetailPage = () => {
             <h5 className="text-muted">Author: {book.autor}</h5>
             <p className="mt-3">{book.resumenLargo}</p>
             <h4 className="text-primary">${book.precio}</h4>
-            <Button variant="primary" onClick={() => agregarAlCarrito(book)}>
-                 Agregar al carrito
+            <Button variant="primary" onClick={handleAgregar}>
+              Agregar al carrito
             </Button>
           </Col>
         </Row>
+        <ToastAlert
+            show={showToast}
+            onClose={() => setShowToast(false)}
+            message="Producto agregado con éxito!"
+          />
       </Container>
     </>
   );
