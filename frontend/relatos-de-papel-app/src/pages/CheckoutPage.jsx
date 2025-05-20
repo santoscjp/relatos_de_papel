@@ -1,10 +1,10 @@
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
-import useCarrito from '../hooks/useCarrito';
-import { Link } from 'react-router-dom';
-import NavBarApp from '../components/Navbar/Navbar';
-
+import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import useCarrito from "../hooks/useCarrito";
+import { Link } from "react-router-dom";
+import NavBarApp from "../components/Navbar/Navbar";
+import BookItem from "../components/BookItem/BookItem";
 const CheckoutPage = () => {
-  const { carrito} = useCarrito();
+  const { carrito } = useCarrito();
 
   const total = carrito.reduce(
     (acc, item) => acc + item.precioFinal * item.cantidad,
@@ -15,37 +15,25 @@ const CheckoutPage = () => {
     <>
       <NavBarApp />
       <Container className="mt-4">
-      <h3>Pasarela de Pago</h3>
-      {carrito.length === 0 ? (
-        <p>No hay productos en el carrito.</p>
-      ) : (
-        <>
-          <Row>
-            {carrito.map((item) => (
-              <Col key={item.uuid} md={4} className="mb-3">
-                <Card>
-                  <Card.Img variant="top" src={`/assets/${item.portada}`} />
-                  <Card.Body>
-                    <Card.Title>{item.titulo}</Card.Title>
-                    <Card.Text>
-                      Cantidad: {item.cantidad}
-                      <br />
-                      Precio unitario: ${item.precioFinal}
-                    </Card.Text>
-                  </Card.Body>
-                </Card>
-              </Col>
-            ))}
-          </Row>
-          <hr />
-          <h4>Total: ${total.toFixed(2)}</h4>
-          <Link to='/order'>
-            <Button variant="success">
-              Ir a pagar
-            </Button>
-          </Link>
-        </>
-      )}
+        <h3>Pasarela de Pago</h3>
+        {carrito.length === 0 ? (
+          <p>No hay productos en el carrito.</p>
+        ) : (
+          <>
+            <Row>
+              {carrito.map((item) => (
+                <Col key={item.uuid} className="mb-3">
+                  <BookItem key={item.uuid} libro={item} />
+                </Col>
+              ))}
+            </Row>
+            <hr />
+            <h4>Total: ${total.toFixed(2)}</h4>
+            <Link to="/order">
+              <Button variant="success">Ir a pagar</Button>
+            </Link>
+          </>
+        )}
       </Container>
     </>
   );
