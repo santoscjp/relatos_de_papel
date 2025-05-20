@@ -20,11 +20,9 @@ const CheckoutPage = () => {
           <p>No hay productos en el carrito.</p>
         ) : (
           <>
-            <Row>
+            <Row className="g-3">
               {carrito.map((item) => (
-                <Col key={item.uuid} className="mb-3">
-                  <BookItem key={item.uuid} libro={item} />
-                </Col>
+                <BookItem key={item.uuid} libro={item} />
               ))}
             </Row>
             <hr />
