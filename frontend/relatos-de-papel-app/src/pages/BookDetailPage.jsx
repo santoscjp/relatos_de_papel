@@ -3,8 +3,8 @@ import { useParams } from 'react-router-dom';
 import NavBarApp from '../components/Navbar/Navbar';
 import useCarrito from '../hooks/useCarrito';
 import libros from '../data/libros';
-import { Container, Row, Col, Card, Button, Toast } from 'react-bootstrap';
-import './BookDetailPage.scss';
+import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import ToastAlert from '../components/ToastAlert/ToastAlert';
 
 const BookDetailPage = () => {
   const { id } = useParams();
@@ -46,15 +46,11 @@ const BookDetailPage = () => {
             </Button>
           </Col>
         </Row>
-        <Toast
-          onClose={() => setShowToast(false)}
-          show={showToast}
-          delay={2000}
-          autohide
-          className='toast-top-center'
-        >
-          <Toast.Body>Producto agregado con éxito!</Toast.Body>
-        </Toast>
+        <ToastAlert
+            show={showToast}
+            onClose={() => setShowToast(false)}
+            message="Producto agregado con éxito!"
+          />
       </Container>
     </>
   );
