@@ -26,7 +26,7 @@ const CartPage = () => {
                 <Row className="align-items-center">
                   <Col xs={3} md={2}>
                     <img
-                      src={`/assets/${item.portada}`}
+                      src={`${process.env.PUBLIC_URL}/assets/images/${item.portada}`}
                       alt={item.titulo}
                       className="img-fluid rounded"
                     />

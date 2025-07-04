@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import NavBarApp from '../components/Navbar/Navbar';
 import useCarrito from '../hooks/useCarrito';
-import libros from '../data/libros';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import ToastAlert from '../components/ToastAlert/ToastAlert';
+import { getBookById } from '../services/api';
 
 const BookDetailPage = () => {
   const { id } = useParams();
@@ -12,10 +12,11 @@ const BookDetailPage = () => {
   const [book, setBook] = useState(null);
   const [showToast, setShowToast] = useState(false);
 
-  useEffect(() => {
-    const found = libros.find((l) => l.uuid === id);
-    setBook(found);
-  }, [id]);
+useEffect(() => {
+  getBookById(id)
+    .then(setBook)
+    .catch(() => setBook(null));
+}, [id]);
 
   if (!book) return <p>Cargando libro...</p>;
 

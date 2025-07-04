@@ -30,13 +30,13 @@ const CheckoutPage = () => {
             {carrito.map((item) => (
               <Col key={item.uuid} md={4} className="mb-3">
                 <Card>
-                  <Card.Img variant="top" src={`/assets/${item.portada}`} />
+                  <Card.Img variant="top" src={`${process.env.PUBLIC_URL}/assets/images/${item.portada}`} />
                   <Card.Body>
                     <Card.Title>{item.titulo}</Card.Title>
                     <Card.Text>
                       Cantidad: {item.cantidad}
                       <br />
-                      Precio unitario: ${item.precioFinal}
+                      Precio unitario: ${item.precioFinal.toFixed(2)}
                     </Card.Text>
                   </Card.Body>
                 </Card>

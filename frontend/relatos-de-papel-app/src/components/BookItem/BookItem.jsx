@@ -30,7 +30,7 @@ const BookItem = ({ libro }) => {
         >
           <div className="p-3 text-center">
             <Card.Img
-              src={`${process.env.PUBLIC_URL}/assets/${libro.portada}`}
+              src={`${process.env.PUBLIC_URL}/assets/images/${libro.portada}`}
               height={200}
               className="object-fit-contain"
               alt={libro.titulo}
@@ -47,7 +47,7 @@ const BookItem = ({ libro }) => {
             <div className="d-flex justify-content-between align-items-center">
               <div>
                 <span className="text-success fw-bold">
-                  ${libro.precioFinal}
+                  ${libro.precioFinal.toFixed(2)}
                 </span>{" "}
                 <del className="text-muted">${libro.precio}</del>
               </div>
