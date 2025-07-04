@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import NavBarApp from '../components/Navbar/Navbar';
-import useCarrito from '../hooks/useCarrito';
-import { Container, Row, Col, Card, Button } from 'react-bootstrap';
-import ToastAlert from '../components/ToastAlert/ToastAlert';
-import { getBookById } from '../services/api';
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import NavBarApp from "../components/Navbar/Navbar";
+import useCarrito from "../hooks/useCarrito";
+import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import ToastAlert from "../components/ToastAlert/ToastAlert";
+import { getBookById } from "../services/api";
 
 const BookDetailPage = () => {
   const { id } = useParams();
@@ -12,11 +12,11 @@ const BookDetailPage = () => {
   const [book, setBook] = useState(null);
   const [showToast, setShowToast] = useState(false);
 
-useEffect(() => {
-  getBookById(id)
-    .then(setBook)
-    .catch(() => setBook(null));
-}, [id]);
+  useEffect(() => {
+    getBookById(id)
+      .then(setBook)
+      .catch(() => setBook(null));
+  }, [id]);
 
   if (!book) return <p>Cargando libro...</p>;
 
@@ -33,7 +33,10 @@ useEffect(() => {
           <Col md={4}>
             <Card.Img
               variant="top"
-              src={`${process.env.PUBLIC_URL}/assets/${book.portada}`}
+              src={`${process.env.PUBLIC_URL}/assets/images/${book.portada}`}
+              height={300}
+              width={300}
+              className="object-fit-contain"
               alt={book.titulo}
             />
           </Col>
@@ -48,10 +51,10 @@ useEffect(() => {
           </Col>
         </Row>
         <ToastAlert
-            show={showToast}
-            onClose={() => setShowToast(false)}
-            message="Producto agregado con éxito!"
-          />
+          show={showToast}
+          onClose={() => setShowToast(false)}
+          message="Producto agregado con éxito!"
+        />
       </Container>
     </>
   );
